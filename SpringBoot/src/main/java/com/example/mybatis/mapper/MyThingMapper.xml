@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+        namespace="com.example.mybatis.mapper.MyThingMapper">
+    <resultMap id="BaseResultMap"
+               type="com.example.model.MyThing">
+        <id column="id" property="id" jdbcType="INT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="desc" property="desc"
+                jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectMyThingById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select * from
+		my_thing
+		where id = #{id}
+
+	</select>
+
+    <!--<insert id="insert" parameterType="com.maycur.dingtalk.isvreceiver.domain.CorporationAuthInfo">-->
+    <!--insert into dingtalk_corp_info-->
+    <!--(-->
+    <!--corp_id,-->
+    <!--corp_name,-->
+    <!--permanent_code,-->
+    <!--corp_access_token,-->
+    <!--tmp_auth_code,-->
+    <!--js_ticket,-->
+    <!--corp_token_time,-->
+    <!--js_ticket_time-->
+    <!--)-->
+    <!--values-->
+    <!--(-->
+    <!--#{corpId,jdbcType=VARCHAR},-->
+    <!--#{corpName,jdbcType=VARCHAR},-->
+    <!--#{permanentCode,jdbcType=VARCHAR},-->
+    <!--#{accessToken,jdbcType=VARCHAR},-->
+    <!--#{tmpAuthCode,jdbcType=VARCHAR},-->
+    <!--#{jsTicket,jdbcType=VARCHAR},-->
+    <!--#{accessTokenTime,jdbcType=BIGINT},-->
+    <!--#{jsTicketTime,jdbcType=BIGINT}-->
+    <!--)-->
+    <!--</insert>-->
+
+    <!--<update id="updateByCorpId" parameterType="com.maycur.dingtalk.isvreceiver.domain.CorporationAuthInfo">-->
+    <!--update dingtalk_corp_info-->
+    <!--<set>-->
+    <!--corp_name= #{corpName,jdbcType=VARCHAR},-->
+    <!--permanent_code = #{permanentCode,jdbcType=VARCHAR},-->
+    <!--corp_access_token = #{accessToken,jdbcType=VARCHAR},-->
+    <!--tmp_auth_code = #{tmpAuthCode,jdbcType=VARCHAR},-->
+    <!--js_ticket = #{jsTicket,jdbcType=VARCHAR},-->
+    <!--corp_token_time = #{accessTokenTime,jdbcType=BIGINT},-->
+    <!--js_ticket_time = #{jsTicketTime,jdbcType=BIGINT},-->
+    <!--is_enable= #{enable,jdbcType=BOOLEAN}-->
+    <!--</set>-->
+    <!--where corp_id = #{corpId,jdbcType=VARCHAR}-->
+    <!--</update>-->
+
+
+</mapper>
